@@ -241,7 +241,7 @@ async def connect_real(credentials: dict):
     # CONFIRMAÇÃO OBRIGATÓRIA
     confirm = credentials.get("confirm", False)
     if not confirm:
-        raise HTTPException(400, "Para ativar o modo REAL, envie 'confirm': true no body")
+        raise HTTPException(400, "Para ativar o modo REAL, envie \'confirm\': true no body")
     
     result = await manager.connect_real(email, password)
     if result["success"]:
