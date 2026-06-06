@@ -58,7 +58,7 @@ class QuotexManager:
     async def connect_demo(self, email: str, password: str):
         """Conecta à conta DEMO da Quotex"""
         try:
-            from quotexapi.stable_api import Quotex
+            from quotexpy.stable_api import Quotex
             self.demo_client = Quotex(email=email, password=password, lang="pt")
             await self.demo_client.connect()
             self.demo_client.change_account("PRACTICE")  # FORÇA DEMO
@@ -71,7 +71,7 @@ class QuotexManager:
     async def connect_real(self, email: str, password: str):
         """Conecta à conta REAL da Quotex (use com cuidado!)"""
         try:
-            from quotexapi.stable_api import Quotex
+            from quotexpy.stable_api import Quotex
             self.real_client = Quotex(email=email, password=password, lang="pt")
             await self.real_client.connect()
             # NÃO chama change_account para REAL
